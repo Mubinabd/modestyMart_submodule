@@ -1,0 +1,73 @@
+syntax="proto3";
+
+option go_package = "internal/pkg/genproto";
+
+package proto;
+
+import "modestyMart_submodule/common.proto";
+import "modestyMart_submodule/products.proto";
+import "modestyMart_submodule/user.proto";
+
+service OrdersService{
+    rpc CreateOrder(CreateOrderReq) returns (Void);
+    rpc UpdateOrder(UpdateOrderReq) returns (Void);
+    rpc GetOrder(Orders) returns (Orders);
+    rpc DeleteOrder(Orders) returns (Void);
+    rpc ListAllOrders(ListOrdersReq) returns (ListOrdersRes);
+    rpc GetOrderByUserID(OrderByUserId) returns (GetOrdersRes);
+    rpc GetOrderByProductID(OrderByProductId) returns (GetOrdersRes);
+}
+
+message CreateOrderReq{
+    string userID = 1;
+    string productID = 2;
+    int32 quantity = 3;
+    string total_price = 4;
+    string status = 5;
+}
+
+message Orders{
+    string id = 1;
+    UserRes user = 2;
+    ProductsRes product = 3;
+    int32 quantity = 4;
+    string total_price = 5;
+    string status = 6;
+    string created_at = 7;
+}
+
+message ListOrdersReq{
+    Pagination pagination = 1;
+    int32 quantity = 2; 
+    string status = 3;
+}
+message ListOrdersRes{
+    Orders orders = 1;
+    int32 count = 2;
+}
+
+message UpdateOrder{
+    string userID = 1;
+    string productID = 2;
+    int32 quantity = 3;
+    string total_price = 4;
+    string status = 5;
+}
+
+message UpdateOrderReq{
+    string id = 1;
+    UpdateOrder order = 2;
+}
+
+message OrderByUserId{
+    string userID = 1;
+}
+
+message OrderByProductId{
+    string productID = 1;
+}
+
+message GetOrdersRes{
+    Orders orders = 1;
+    int32 count = 2;
+}

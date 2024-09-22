@@ -1,0 +1,39 @@
+syntax="proto3";
+
+option go_package = "internal/pkg/genproto";
+
+package proto;
+
+import "modestyMart_submodule/common.proto";
+import "modestyMart_submodule/orders.proto";
+
+service PaymentsService{
+    rpc CreatePayment(CreatePaymentReq) returns (Payment);
+    rpc GetPayment(Payment) returns (Payment);
+    rpc ListPayments(ListPaymentsReq) returns (ListPaymentsRes);
+}
+
+message CreatePaymentReq{
+    string orderID = 1;
+    string payment_method = 2;
+    int32 amount = 3;
+    string status = 4;
+}
+message Payment{
+    string id = 1;
+    Orders order = 2;
+    string payment_method = 3;
+    int32 amount = 4;
+    string status = 5;
+    string created_at = 6;
+}
+
+message ListPaymentsReq{
+    Pagination pagination = 1;
+    string payment_method = 2;
+    string status = 3;
+}
+message ListPaymentsRes{
+    Payment payment = 1;
+    int32 count = 4;
+}

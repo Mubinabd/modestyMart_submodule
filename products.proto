@@ -1,0 +1,84 @@
+syntax="proto3";
+
+option go_package = "internal/pkg/genproto";
+
+package proto;
+
+import "modestyMart_submodule/common.proto";
+import "modestyMart_submodule/categories.proto";
+
+service ProductsService{
+    rpc CreateProduct(CreateProductReq) returns (Void);
+    rpc UpdateProduct(UpdateProductReq) returns (Void);
+    rpc GetProduct(GetById) returns (Products);
+    rpc DeleteProduct(GetById) returns (Void);
+    rpc ListAllProducts(ListAllProductsReq) returns (ListAllProductsRes);
+    rpc GetCategory(GetCategoryReq) returns (GetCategoryRes);
+    rpc GetProductsByPriceRange(GetProductsByPriceRangeReq) returns (ListAllProductsRes);
+
+}
+message Products{
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    string price = 4;
+    Categories category = 5;
+    int32 stock = 6;
+    string created_at = 7;
+}
+
+message CreateProductReq{
+    string name = 1;
+    string description = 2;
+    string price = 3;
+    string category = 4;
+    int32 stock = 5;
+}
+
+message UpdateProductReq{
+    string id = 1;
+    UpdateProduct body = 2;
+}
+
+message UpdateProduct{
+    string name = 1;
+    string description = 2;
+    string price = 3;
+    string category = 4;
+    int32 stock = 5;
+}
+
+message ListAllProductsReq{
+    Pagination pagination = 1;
+    string name = 2;
+    string price = 3;
+    int32 stock = 4;
+}
+
+message ListAllProductsRes{
+    Products products = 1;
+    int32 count = 2;
+}
+
+message GetCategoryReq{
+    string categoryID = 1;
+}
+
+message GetCategoryRes{
+    Products products = 1;
+    int32 count = 2;
+}
+
+message ProductsRes{
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    string price = 4;
+    string categoryID = 5;
+    int32 stock = 6;
+    string created_at = 7;
+}
+message GetProductsByPriceRangeReq {
+    string min_price = 1;
+    string max_price = 2;
+}

@@ -1,0 +1,47 @@
+syntax="proto3";
+
+option go_package = "internal/pkg/genproto";
+
+package proto;
+
+import "modestyMart_submodule/common.proto";
+
+service CategoriesService {
+    rpc CreateCategory(CreateCategoryReq) returns (Void) {}
+    rpc ListCategories(ListAllCategoriesReq) returns (ListCategoriesRes) {}
+    rpc UpdateCategory(UpdateCategoryReq) returns (Void) {}
+    rpc DeleteCategory(GetById) returns (Void) {}
+    rpc GetCategory(GetById) returns (Categories) {}
+
+}
+
+message CreateCategoryReq {
+    string name = 1;
+    string description = 2;
+}
+
+message Categories {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    string created_at = 4;
+}
+
+message UpdateCategoryReq {
+    string id = 1;
+    UpdateCategory body = 2;
+}
+message UpdateCategory{
+    string name = 1;
+    string description = 2;
+}
+
+message ListAllCategoriesReq {
+    Pagination pagination = 1;
+    string name = 2;
+}
+
+message ListCategoriesRes {
+    Categories categories = 1;
+    int32 count = 2;
+}
