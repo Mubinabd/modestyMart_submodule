@@ -24,7 +24,8 @@ message Products{
     string price = 4;
     Categories category = 5;
     int32 stock = 6;
-    string created_at = 7;
+    string image_url = 7;
+    string created_at = 8;
 }
 
 message CreateProductReq{
@@ -33,6 +34,7 @@ message CreateProductReq{
     string price = 3;
     string category = 4;
     int32 stock = 5;
+    string image_url = 6;
 }
 
 message UpdateProductReq{
@@ -46,6 +48,7 @@ message UpdateProduct{
     string price = 3;
     string category = 4;
     int32 stock = 5;
+    string image_url = 6;
 }
 
 message ListAllProductsReq{
@@ -76,7 +79,8 @@ message ProductsRes{
     string price = 4;
     string categoryID = 5;
     int32 stock = 6;
-    string created_at = 7;
+    string image_url = 7;
+    string created_at = 8;
 }
 message GetProductsByPriceRangeReq {
     string min_price = 1;
