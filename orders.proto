@@ -11,8 +11,8 @@ import "modestyMart_submodule/user.proto";
 service OrdersService{
     rpc CreateOrder(CreateOrderReq) returns (Void);
     rpc UpdateOrder(UpdateOrderReq) returns (Void);
-    rpc GetOrder(Orders) returns (Orders);
-    rpc DeleteOrder(Orders) returns (Void);
+    rpc GetOrder(GetById) returns (Orders);
+    rpc DeleteOrder(GetById) returns (Void);
     rpc ListAllOrders(ListOrdersReq) returns (ListOrdersRes);
     rpc GetOrderByUserID(OrderByUserId) returns (GetOrdersRes);
     rpc GetOrderByProductID(OrderByProductId) returns (GetOrdersRes);
