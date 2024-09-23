@@ -21,7 +21,7 @@ message CreatePaymentReq{
 }
 message Payment{
     string id = 1;
-    Orders order = 2;
+    OrdersRes order = 2;
     string payment_method = 3;
     int32 amount = 4;
     string status = 5;
