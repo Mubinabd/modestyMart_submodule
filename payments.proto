@@ -9,7 +9,7 @@ import "modestyMart_submodule/orders.proto";
 
 service PaymentsService{
     rpc CreatePayment(CreatePaymentReq) returns (Payment);
-    rpc GetPayment(Payment) returns (Payment);
+    rpc GetPayment(GetById) returns (Payment);
     rpc ListPayments(ListPaymentsReq) returns (ListPaymentsRes);
 }
 
