@@ -68,6 +68,6 @@ message OrderByProductId{
 }
 
 message GetOrdersRes{
-    repeatedOrders orders = 1;
+    repeated Orders orders = 1;
     int32 count = 2;
 }
