@@ -59,7 +59,7 @@ message ListAllProductsReq{
 }
 
 message ListAllProductsRes{
-    Products products = 1;
+    repeated Products products = 1;
     int32 count = 2;
 }
 
