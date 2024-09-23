@@ -42,7 +42,7 @@ message ListOrdersReq{
     string status = 3;
 }
 message ListOrdersRes{
-    Orders orders = 1;
+    repeated Orders orders = 1;
     int32 count = 2;
 }
 

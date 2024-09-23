@@ -34,6 +34,6 @@ message ListPaymentsReq{
     string status = 3;
 }
 message ListPaymentsRes{
-    Payment payment = 1;
+    repeated Payment payment = 1;
     int32 count = 4;
 }
