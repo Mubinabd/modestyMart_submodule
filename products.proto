@@ -21,7 +21,7 @@ message Products{
     string id = 1;
     string name = 2;
     string description = 3;
-    string price = 4;
+    float price = 4;
     Categories category = 5;
     int32 stock = 6;
     string image_url = 7;
@@ -31,7 +31,7 @@ message Products{
 message CreateProductReq{
     string name = 1;
     string description = 2;
-    string price = 3;
+    float price = 3;
     string categoryID = 4;
     int32 stock = 5;
     string image_url = 6;
@@ -45,7 +45,7 @@ message UpdateProductReq{
 message UpdateProduct{
     string name = 1;
     string description = 2;
-    string price = 3;
+    float price = 3;
     string categoryID = 4;
     int32 stock = 5;
     string image_url = 6;
@@ -54,7 +54,7 @@ message UpdateProduct{
 message ListAllProductsReq{
     Pagination pagination = 1;
     string name = 2;
-    string price = 3;
+    float price = 3;
     int32 stock = 4;
 }
 
@@ -76,7 +76,7 @@ message ProductsRes{
     string id = 1;
     string name = 2;
     string description = 3;
-    string price = 4;
+    float price = 4;
     string categoryID = 5;
     int32 stock = 6;
     string image_url = 7;

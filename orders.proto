@@ -22,7 +22,7 @@ message CreateOrderReq{
     string userID = 1;
     string productID = 2;
     int32 quantity = 3;
-    string total_price = 4;
+    float total_price = 4;
     string status = 5;
 }
 
@@ -31,7 +31,7 @@ message Orders{
     UserRes user = 2;
     ProductsRes product = 3;
     int32 quantity = 4;
-    string total_price = 5;
+    float total_price = 5;
     string status = 6;
     string created_at = 7;
 }
@@ -50,7 +50,7 @@ message UpdateOrder{
     string userID = 1;
     string productID = 2;
     int32 quantity = 3;
-    string total_price = 4;
+    float total_price = 4;
     string status = 5;
 }
 
@@ -76,7 +76,7 @@ message OrdersRes{
     string userID = 2;
     string productID = 3;
     int32 quantity = 4;
-    string total_price = 5;
+    float total_price = 5;
     string status = 6;
     string created_at = 7;
 }

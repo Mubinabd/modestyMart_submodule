@@ -1,0 +1,39 @@
+syntax="proto3";
+
+option go_package = "internal/pkg/genproto";
+
+package proto;
+
+import "modestyMart_submodule/common.proto";
+import "modestyMart_submodule/user.proto";
+
+service CartService{
+    rpc CreateCart(CreateCartReq) returns (Void);
+    rpc ListAllCart(ListAllCartReq) returns (ListAllCartRes);
+    rpc GetCart(GetById) returns (Cart);
+}
+message CreateCartReq{
+    int64 cart_number = 1;
+    string cart_name = 2;
+    float amount = 3;
+    string user_id = 4;
+}
+
+message Cart{
+    string id = 1;
+    int64 cart_number = 2;
+    string cart_name = 3;
+    float amount = 4;
+    UserRes user = 5;
+    string created_at = 6;
+}
+
+message ListAllCartReq{
+    Pagination pagination = 1;
+    string cart_name = 2;
+}
+
+message ListAllCartRes{
+    repeated Cart carts = 1;
+    int32 count = 2;
+}
