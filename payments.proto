@@ -18,6 +18,7 @@ message CreatePaymentReq{
     string payment_method = 2;
     int32 amount = 3;
     string status = 4;
+    string card_id = 5;
 }
 message Payment{
     string id = 1;
@@ -25,7 +26,8 @@ message Payment{
     string payment_method = 3;
     int32 amount = 4;
     string status = 5;
-    string created_at = 6;
+    string cart_id = 6;
+    string created_at = 7;
 }
 
 message ListPaymentsReq{
