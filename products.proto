@@ -83,6 +83,6 @@ message ProductsRes{
     string created_at = 8;
 }
 message GetProductsByPriceRangeReq {
-    string min_price = 1;
-    string max_price = 2;
+    float min_price = 1;
+    float max_price = 2;
 }
