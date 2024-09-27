@@ -54,7 +54,6 @@ message UpdateProduct{
 message ListAllProductsReq{
     Pagination pagination = 1;
     string name = 2;
-    float price = 3;
 }
 
 message ListAllProductsRes{
