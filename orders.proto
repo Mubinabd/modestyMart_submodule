@@ -38,8 +38,7 @@ message Orders{
 
 message ListOrdersReq{
     Pagination pagination = 1;
-    int32 quantity = 2; 
-    string status = 3;
+    string status = 2;
 }
 message ListOrdersRes{
     repeated Orders orders = 1;
