@@ -8,10 +8,10 @@ import "modestyMart_submodule/common.proto";
 
 service NotificationService {
     rpc CreateNotification(NotificationCreate) returns (Void);
-    rpc DeleteNotification(ById) returns (Void);
+    rpc DeleteNotification(GetById) returns (Void);
     rpc UpdateNotification(NotificationUpdate) returns (Void);
     rpc GetNotifications(NotifFilter) returns (NotificationList);
-    rpc GetNotification(ById) returns (NotificationGet);
+    rpc GetNotification(GetById) returns (NotificationGet);
     rpc NotifyAll(NotificationMessage) returns(Void);
 }
 message NotificationCreate {
