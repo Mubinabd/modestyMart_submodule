@@ -14,7 +14,6 @@ service OrdersService{
     rpc GetOrder(GetById) returns (Orders);
     rpc DeleteOrder(GetById) returns (Void);
     rpc ListAllOrders(ListOrdersReq) returns (ListOrdersRes);
-    rpc GetOrderByUserID(OrderByUserId) returns (GetOrdersRes);
     rpc GetOrderByProductID(OrderByProductId) returns (GetOrdersRes);
 }
 
@@ -58,9 +57,6 @@ message UpdateOrderReq{
     UpdateOrder order = 2;
 }
 
-message OrderByUserId{
-    string userID = 1;
-}
 
 message OrderByProductId{
     string productID = 1;
