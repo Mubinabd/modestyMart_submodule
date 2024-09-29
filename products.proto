@@ -13,7 +13,6 @@ service ProductsService{
     rpc GetProduct(GetById) returns (Products);
     rpc DeleteProduct(GetById) returns (Void);
     rpc ListAllProducts(ListAllProductsReq) returns (ListAllProductsRes);
-    rpc GetCategory(GetCategoryReq) returns (GetCategoryRes);
     rpc GetProductsByPriceRange(GetProductsByPriceRangeReq) returns (ListAllProductsRes);
 
 }
@@ -61,9 +60,6 @@ message ListAllProductsRes{
     int32 count = 2;
 }
 
-message GetCategoryReq{
-    string categoryID = 1;
-}
 
 message GetCategoryRes{
     Products products = 1;
